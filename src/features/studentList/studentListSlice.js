@@ -3,16 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
   const initialState = [
     {
         key: '1',
-        FirstName: 'Mike',
-        LastName: 'Musa',
+        FirstName: 'Muhammad',
+        LastName: 'Arab',
         gender: 'Male',
         age: 32,
         department: 'Physics',
       },
       {
         key: '2',
-        FirstName: 'Mike',
-        LastName: 'Musa',
+        FirstName: 'Mrs. Al-ameen',
+        LastName: 'AbdulKadir',
         gender: 'Female',
         age: 32,
         department: 'Chemistry',

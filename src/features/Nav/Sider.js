@@ -3,6 +3,8 @@ import { Layout, Menu } from 'antd';
 import 'antd/dist/antd.css'
 import { UserOutlined, HomeOutlined, ContactsOutlined, SolutionOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { toggleDrawer } from '../enrolmentForm/enrolmentFormDrawerSlice';
 
 const Logo = styled.div`
   height: 32px;
@@ -13,6 +15,7 @@ const Logo = styled.div`
 const { Sider } = Layout;
 
 const SideNav =  function SideNav() {
+    const dispatch = useDispatch()
     return (
         <Sider
             breakpoint="lg"
@@ -27,7 +30,7 @@ const SideNav =  function SideNav() {
         <Logo/>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
             <Menu.Item key="1" icon={<HomeOutlined />}>
-                <span onClick={()=> console.log('I am clicked')}>Home</span>
+                <span onClick={()=> dispatch(toggleDrawer(true))}>Home</span>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserOutlined />}>
                 Enrol

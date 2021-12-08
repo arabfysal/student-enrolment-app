@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Layout, Drawer } from 'antd';
 import 'antd/dist/antd.css'
 import Sider from './features/Nav/Sider'
 import StudentListTable from './features/studentList/StudentList';
 import EnrolmentForm from './features/enrolmentForm/enrolmentForm';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleDrawer } from './features/enrolmentForm/enrolmentFormDrawerSlice';
 
 const { Header, Content, Footer } = Layout;
 
-/* let isVisible = false
-  const setDrawerVisibility = ()=> {
-    console.log(isVisible)
-    isVisible = !isVisible
-  } */
-
 function App() {
-  const [isShown, setVisibility ] = useState(false)
-  const setDrawerVisibility = ()=> {
-    setVisibility(!isShown)
-  }
+  const dispatch = useDispatch
+  const isOpen = useSelector((state)=> state.drawerState.value)
   return (  
     <Layout>
         <Sider/>
@@ -28,8 +22,7 @@ function App() {
               <StudentListTable/>
             </div>
             <Layout>
-              {/* <button onClick={ ()=> setDrawerVisibility() }>clicked</button> */}
-                <Drawer /* onClose={setVisibility(false)} */ visible={ isShown }>
+                <Drawer onClose={()=> dispatch(toggleDrawer(false))} visible={ isOpen }>
                     <EnrolmentForm/>
                 </Drawer>
             </Layout>

@@ -6,7 +6,7 @@ import { createSlice } from '@reduxjs/toolkit';
         FirstName: 'Muhammad',
         LastName: 'Arab',
         gender: 'Male',
-        age: 32,
+        level: 32,
         department: 'Physics',
       },
       {
@@ -14,7 +14,7 @@ import { createSlice } from '@reduxjs/toolkit';
         FirstName: 'Mrs. Al-ameen',
         LastName: 'AbdulKadir',
         gender: 'Female',
-        age: 32,
+        level: 32,
         department: 'Chemistry',
       }
   ]

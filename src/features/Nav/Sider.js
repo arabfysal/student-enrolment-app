@@ -29,8 +29,12 @@ const SideNav =  function SideNav() {
         >
         <Logo/>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-            <Menu.Item key="1" icon={<HomeOutlined />}>
-                <span onClick={()=> dispatch(toggleDrawer(true))}>Home</span>
+            <Menu.Item 
+                key="1" 
+                icon={<HomeOutlined />}
+                onClick={()=> dispatch(toggleDrawer(true))}
+            >
+                <span>Home</span>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserOutlined />}>
                 Enrol

@@ -10,8 +10,9 @@ import { toggleDrawer } from './features/enrolmentForm/enrolmentFormDrawerSlice'
 const { Header, Content, Footer } = Layout;
 
 function App() {
-  const dispatch = useDispatch
+  const dispatch = useDispatch()
   const isOpen = useSelector((state)=> state.drawerState.value)
+  const closeDrawer = ()=> { return dispatch(toggleDrawer(false)) }
   return (  
     <Layout>
         <Sider/>
@@ -22,7 +23,7 @@ function App() {
               <StudentListTable/>
             </div>
             <Layout>
-                <Drawer onClose={()=> dispatch(toggleDrawer(false))} visible={ isOpen }>
+                <Drawer onClose={closeDrawer} visible={ isOpen }>
                     <EnrolmentForm/>
                 </Drawer>
             </Layout>

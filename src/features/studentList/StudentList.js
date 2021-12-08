@@ -30,7 +30,12 @@ const StudentList = function StudentsList() {
         {
             title: 'Departement',
             dataIndex: 'department',
-            key: 'departement',
+            key: 'department',
+          },
+          {
+            title: 'Level',
+            dataIndex: 'level',
+            key: 'level',
           }
       ];
       /* const dataSource = [

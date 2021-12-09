@@ -3,6 +3,7 @@ import { Form, Input, Button, Select, Radio, Typography, Space, Layout } from 'a
 import 'antd/dist/antd.css'
 import { enrolStudent } from '../studentList/studentListSlice';
 import { useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 
 const {Option} = Select;
 const {Title} = Typography
@@ -15,7 +16,7 @@ const EnrolmentForm = function EnrolmentForm() {
     const [level, setLevel] = useState('')
     const dispatch = useDispatch()
     const onSubmitForm = ()=>{
-        const data = {firstName, lastName, gender, level, department}
+        const data = {firstName, lastName, gender, level, department, key: nanoid()}
         console.log(data)
         dispatch(enrolStudent(data))
 

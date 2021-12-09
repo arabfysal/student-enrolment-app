@@ -2,24 +2,24 @@ import React, {useEffect} from 'react';
 import { Table, Typography } from 'antd';
 import 'antd/dist/antd.css'
 import { useSelector, useDispatch } from 'react-redux';
-import {fetchAll} from './studentListSlice'
+//import {fetchAll} from './studentListSlice'
 
 const { Title } = Typography
 const StudentList = function StudentsList() {
   useEffect(()=>{
     console.log('Hello')
   })
-  const dalibai = useSelector( state => state.students)
-  console.log('dalibai ' + dalibai[1].FirstName)
+  const students = useSelector( state => state.students)
+  console.log('students ' + students[1].firstName)
     const columns = [
         {
           title: 'First Name',
-          dataIndex: 'FirstName',
+          dataIndex: 'firstName',
           key: 'name',
         },
         {
           title: 'Last Name',
-          dataIndex: 'LastName',
+          dataIndex: 'lastName',
           key: 'lastName',
         },
         {
@@ -38,41 +38,7 @@ const StudentList = function StudentsList() {
             key: 'level',
           }
       ];
-      /* const dataSource = [
-          {
-            key: '1',
-            FirstName: 'Mike',
-            LastName: 'Musa',
-            gender: 'Male',
-            age: 32,
-            department: 'Physics',
-          },
-          {
-            key: '2',
-            FirstName: 'Mike',
-            LastName: 'Musa',
-            gender: 'Female',
-            age: 32,
-            department: 'Chemistry',
-          },
-          {
-            key: '3',
-            FirstName: 'Mike',
-            LastName: 'Musa',
-            gender: 'Female',
-            age: 32,
-            department: 'Biology',
-          },
-          {
-            key: '4',
-            FirstName: 'Mike',
-            LastName: 'Musa',
-            gender: 'Male',
-            age: 32,
-            department: 'Mathematics',
-          }
-      ] */
-      const dataSource = dalibai
+      const dataSource = students
     return (
         <Table 
             dataSource={dataSource} 

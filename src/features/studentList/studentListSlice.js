@@ -3,16 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
   const initialState = [
     {
         key: '1',
-        FirstName: 'Muhammad',
-        LastName: 'Arab',
+        firstName: 'Muhammad',
+        lastName: 'Arab',
         gender: 'Male',
         level: 32,
         department: 'Physics',
       },
       {
         key: '2',
-        FirstName: 'Mrs. Al-ameen',
-        LastName: 'AbdulKadir',
+        firstName: 'Mrs. Al-ameen',
+        lastName: 'AbdulKadir',
         gender: 'Female',
         level: 32,
         department: 'Chemistry',
@@ -22,13 +22,13 @@ import { createSlice } from '@reduxjs/toolkit';
     name: "students",
     initialState,
     reducers: {
-      fetchAll: (state, action)=> {
+      enrolStudent: (state, action)=> {
         //fetch all reducer
         state.push(action.payload)
       }
     }
   })
 
-  export const { fetchAll } = studentListSlice.actions
+  export const { enrolStudent } = studentListSlice.actions
 
   export default studentListSlice.reducer

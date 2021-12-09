@@ -23,7 +23,6 @@ import { createSlice } from '@reduxjs/toolkit';
     initialState,
     reducers: {
       enrolStudent: (state, action)=> {
-        //fetch all reducer
         state.push(action.payload)
       }
     }

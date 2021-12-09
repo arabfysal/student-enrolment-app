@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import { Table, Typography } from 'antd';
 import 'antd/dist/antd.css'
-import { useSelector, useDispatch } from 'react-redux';
-//import {fetchAll} from './studentListSlice'
+import { useSelector } from 'react-redux';
 
 const { Title } = Typography
 const StudentList = function StudentsList() {
@@ -10,7 +9,7 @@ const StudentList = function StudentsList() {
     console.log('Hello')
   })
   const students = useSelector( state => state.students)
-  console.log('students ' + students[1].firstName)
+  /* console.log('students ' + students[1].firstName) */
     const columns = [
         {
           title: 'First Name',

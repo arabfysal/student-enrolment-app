@@ -19,7 +19,6 @@ const EnrolmentForm = function EnrolmentForm() {
         const data = {firstName, lastName, gender, level, department, key: nanoid()}
         console.log(data)
         dispatch(enrolStudent(data))
-
     }
     return (
         <Layout style={{background: '#fff'}}> 
